@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:secure_doinz/dialog_manager.dart';
 import 'package:secure_doinz/repositories/auth_repository.dart';
 
 class AuthController extends StateNotifier<bool> {
@@ -17,6 +18,7 @@ class AuthController extends StateNotifier<bool> {
     state = true;
 
     final res = await _authRepository.signUpUser();
+    _authControllerRef.read(appSessionServiceProvider.notifier).countTime();
 
     state = false;
 

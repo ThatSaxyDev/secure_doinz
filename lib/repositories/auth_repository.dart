@@ -24,9 +24,9 @@ class AuthRepository {
     switch (responseStatusCode) {
       //! SERVER REQUEST WAS SUCCESSFUL
       case 200:
+       
         //! CONVERT DATA TO MODEL AND GET TOKEN
-
-        UserToken currentSessionToken = UserToken(token: tokenFromJson);
+ UserToken currentSessionToken = UserToken(token: tokenFromJson);
 
         //! UPDATE TOKEN STATE
         _ref
